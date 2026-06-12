@@ -13,7 +13,7 @@ xが付いたものはプロジェクトに含まれています。
 - [ ] LKAS : Lane Keeping Assist System（レーンキープ）
 - [ ] AEBS : Advanced Emergency Braking System（衝突被害軽減）
 - [ ] BSM : Blind Spot Monitoring（ブラインドモニタリング）
-- [ ] FCW : Forward Collision Warning（前方衝突警告）
+- [x] FCW : Forward Collision Warning（前方衝突警告）
 - [ ] NV/PD : Night Vision/Pedestrian Detection（ナイトビジョン／歩行者検知）
 - [x] LDW : Lane Departure Warning（車線逸脱警報）
 - [ ] TSR : Traffic Sign Recognition（道路標識認識）
