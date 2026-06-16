@@ -9,13 +9,14 @@ ADASは運転を支援するシステムの総称です。
 xが付いたものはプロジェクトに含まれています。
 既にプロジェクトに含まれているものも大幅な変更が入ることがあることに注意してください。
 
-- [ ] ACC : Adaptive Cruise Control（オートクルーズ）
+- [x] LDW : Lane Departure Warning（車線逸脱警報）
+- [x] LDP : Lane Departure Prevention（車線逸脱防止支援）
+- [x] FCW : Forward Collision Warning（前方衝突警告）
 - [ ] LKAS : Lane Keeping Assist System（レーンキープ）
+- [ ] ACC : Adaptive Cruise Control（オートクルーズ）
 - [ ] AEBS : Advanced Emergency Braking System（衝突被害軽減）
 - [ ] BSM : Blind Spot Monitoring（ブラインドモニタリング）
-- [x] FCW : Forward Collision Warning（前方衝突警告）
 - [ ] NV/PD : Night Vision/Pedestrian Detection（ナイトビジョン／歩行者検知）
-- [x] LDW : Lane Departure Warning（車線逸脱警報）
 - [ ] TSR : Traffic Sign Recognition（道路標識認識）
 - [ ] RCTA : Rear Cross Traffic Alert（後退時車両検知警報）
 - [ ] DM : Driver Monitoring（ドライバモニタリング）
