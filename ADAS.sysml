@@ -130,17 +130,6 @@ package ADAS {
 		port '警報出力';
 		port '車両制御出力';
 
-		perform action '前方衝突警報を判定する' {
-			action '映像入力取得' accept 'カメラ映像' : Items::'映像' via '映像入力';
-			flow '映像入力取得'.'カメラ映像' to FCW::'前方障害物との距離を推定する'.'カメラ映像';
-			perform FCW::'前方障害物との距離を推定する';
-
-			action 'FCW設定入力取得' accept 'FCW設定' : Boolean via 'ADAS設定入力';
-			flow 'FCW設定入力取得'.'FCW設定' to FCW::'FCWの作動を判定する'.'FCW設定';
-			perform FCW::'FCWの作動を判定する';
-
-			send FCW::'FCWの作動を判定する'.'警報' via '警報出力';
-		}
 		perform action '意図しない車線逸脱を検知する' {
 			out 'モデル' = LDW::'レーンモデルを生成する'.'モデル';
 			out 'LDW有効' = LDW::'LDWの作動を判定する'.'判定結果';
@@ -182,6 +171,20 @@ package ADAS {
 
 			send '車両操作量を算出する'.'目標角度' via '車両制御出力';
 			send '車両操作量を算出する'.'目標車速' via '車両制御出力';
+		}
+		perform action '前方衝突警報を判定する' {
+			action '映像入力取得' accept 'カメラ映像' : Items::'映像' via '映像入力';
+			flow '映像入力取得'.'カメラ映像' to FCW::'前方障害物との距離を推定する'.'カメラ映像';
+			perform FCW::'前方障害物との距離を推定する';
+
+			action '車速入力取得' accept '車速' : Real via '車両状態入力';
+			flow '車速入力取得'.'車速' to FCW::'FCWの作動を判定する'.'車速';
+
+			action 'FCW設定入力取得' accept 'FCW設定' : Boolean via 'ADAS設定入力';
+			flow 'FCW設定入力取得'.'FCW設定' to FCW::'FCWの作動を判定する'.'FCW設定';
+			perform FCW::'FCWの作動を判定する';
+
+			send FCW::'FCWの作動を判定する'.'警報' via '警報出力';
 		}
 	}
 

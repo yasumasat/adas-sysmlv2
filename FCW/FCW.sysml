@@ -15,6 +15,7 @@ package FCW {
 	}
 	action 'FCWの作動を判定する' {
 		in 'FCW設定' : Boolean;
+		in '車速' : Real;
 		in '前方障害物距離' : Integer;
 		out '警報' : Boolean;
 	}
